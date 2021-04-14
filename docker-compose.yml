@@ -1,0 +1,45 @@
+version: '3.4'
+
+services:
+  accountinfoservice:
+    image: ${DOCKER_REGISTRY-}accountinfoservice
+    build:
+      context: .
+      dockerfile: AccountInfoService/Dockerfile
+
+  addressservice:
+    image: ${DOCKER_REGISTRY-}addressservice
+    build:
+      context: .
+      dockerfile: AddressService/Dockerfile
+
+
+  attendanceservice:
+    image: ${DOCKER_REGISTRY-}attendanceservice
+    build:
+      context: .
+      dockerfile: AttendanceService/Dockerfile
+
+
+  gateway:
+    image: ${DOCKER_REGISTRY-}gateway
+    build:
+      context: .
+      dockerfile: Gateway/Dockerfile
+
+
+  libraryservice:
+    image: ${DOCKER_REGISTRY-}libraryservice
+    build:
+      context: .
+      dockerfile: LibraryService/Dockerfile
+
+
+  resultservice:
+    image: ${DOCKER_REGISTRY-}resultservice
+    build:
+      context: .
+      dockerfile: ResultService/Dockerfile
+
+  jaeger:
+    image: jaegertracing/all-in-one
